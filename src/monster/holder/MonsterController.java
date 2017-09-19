@@ -47,27 +47,27 @@ public class MonsterController
 			System.out.println("Thank you so much! I only have this many arms now: " + currentMonster.getArmCount());
 		}
 
-//		System.out.println(currentMonster.getName() + "wants to know what to eat next");
-//		System.out.println(currentMonster.getName() + " suggests eyes, he has " + currentMonster.getEyeCount());
-//		System.out.println("How many eyes do you want to eat?");
-//		Scanner eyeScanner = new Scanner(System.in);
-//		int consumedEyes = eyeScanner.nextInt();
-//
-//		if (consumedEyes < 0)
-//		{
-//			System.out.println("You cannot eat more than i have you fool!");
-//			consumed = 0;
-//		}
-//		else if (consumedEyes == 0)
-//		{
-//			System.out.println("Fine.. I didn't want to be eaten anyway :'(");
-//		}
-//		else if (consumedEyes > currentMonster.getEyeCount())
-//		{
-//			System.out.println("Boi you really trying to do that I only have " + currentMonster.getArmCount() + " eyes!");
-//		}
-//		else
-//		{
+		System.out.println(currentMonster.getName() + "wants to know what to eat next");
+		System.out.println(currentMonster.getName() + " suggests eyes, he has " + currentMonster.getEyeCount());
+		System.out.println("How many eyes do you want to eat?");
+		Scanner eyeScanner = new Scanner(System.in);
+		int consumedEyes = eyeScanner.nextInt();
+
+		if (consumedEyes < 0)
+		{
+			System.out.println("You cannot eat more than i have you fool!");
+			consumed = 0;
+		}
+		else if (consumedEyes == 0)
+		{
+			System.out.println("Fine.. I didn't want to be eaten anyway :'(");
+		}
+		else if (consumedEyes > currentMonster.getEyeCount())
+		{
+			System.out.println("Boi you really trying to do that I only have " + currentMonster.getArmCount() + " eyes!");
+		}
+		else
+		{
 			currentMonster.setEyeCount(currentMonster.getArmCount() - consumedEyes);
 			System.out.println(" Dude you the best i love that you ate my eyes now i have " + currentMonster.getArmCount() + " left.");
 		}
