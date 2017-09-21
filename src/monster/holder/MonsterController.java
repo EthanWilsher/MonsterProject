@@ -80,6 +80,11 @@ public class MonsterController
 			currentMonster.setEyeCount(currentMonster.getArmCount() - consumedEyes);
 			System.out.println(" Dude you the best i love that you ate my eyes now i have " + currentMonster.getArmCount() + " left.");
 		}
+		
+		popup.displayText("hey look at me heheheheheheheheheheh!!!!");
+		String answer = popup.getResponse("Hey how many meals are you eating today");
+		System.out.println(answer);
+		popup.displayText(answer);
 	}
 
 }
