@@ -17,14 +17,17 @@ public class MonsterController
 	public void start()
 	{
 		MarshmallowMonster sample = new MarshmallowMonster();
-		System.out.println(sample);
+//		System.out.println(sample);
+		popup.displayText(sample.toString());
 		MarshmallowMonster realMonster = new MarshmallowMonster("Ricardo", 8, 6, 6.7, true);
 
-		System.out.println(realMonster);
-		System.out.println("Ethan is hungry, so he is going to eat the bloop excistence");
+//		System.out.println(realMonster);
+		popup.displayText(realMonster.toString());
+//		System.out.println("Ethan is hungry, so he is going to eat some tentacles");
+		popup.displayText("Ethan is hungry so he is going to eat some tentacles");
 		realMonster.setTentacleAmount(2.2);
-		System.out.println(realMonster);
-
+	//	System.out.println(realMonster);
+		popup.displayText(realMonster.toString());
 		interactWithTheMonster(realMonster);
 
 	}
