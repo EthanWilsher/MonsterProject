@@ -24,10 +24,10 @@ public class MonsterController
 //			count += 1;
 //		}
 		
-		for(int loop = 0; loop < 15; loop += 1)
-		{
-			popup.displayText("I am looping " + (loop + 1 ) + " times out of 15");
-		}
+//		for(int loop = 0; loop < 15; loop += 1)
+//		{
+//			popup.displayText("I am looping " + (loop + 1 ) + " times out of 15");
+//		}
 		MarshmallowMonster sample = new MarshmallowMonster();
 		// System.out.println(sample);
 		popup.displayText(sample.toString());
@@ -56,14 +56,29 @@ public class MonsterController
 		int specialAnswer = 0;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 
-		if (isValidInteger(unconverted))
+		while(!isValidInteger(unconverted))
 		{
-			specialAnswer = Integer.parseInt(unconverted);
+			popup.displayText("Try again!");
+			unconverted = popup.getResponse("How many arms???");
 		}
+		
+//		if (isValidInteger(unconverted))
+//		{
+//			specialAnswer = Integer.parseInt(unconverted);
+//		}
+		
+		
 		
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = 0;
+//		String answerNumber = popup.getResponse("Q to ask");
+//		while(!isValidDouble(answerNumber))
+//		{
+////			answerNumber = popup.getResponse("you must type in a double.");
+////		}
+////		double validNumber = Double.parseDouble(answerNumber);
 		consumed = specialAnswer;
+		
 		
 		if (consumed < 0)
 		{
@@ -125,7 +140,7 @@ public class MonsterController
 	private boolean isValidInteger(String sample)
 	{
 		boolean valid = false;
-
+		
 		try
 		{
 			Integer.parseInt(sample);
