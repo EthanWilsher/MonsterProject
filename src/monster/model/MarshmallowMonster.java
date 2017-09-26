@@ -15,7 +15,7 @@ public class MarshmallowMonster
 		//are a zero, false, or null
 	}
 	
-	
+	//This sets all our data of the monster like what it has.
 	public String getName()
 	{
 		return name;
@@ -57,7 +57,7 @@ public class MarshmallowMonster
 	{
 		this.hasBloop = hasBloop;
 	}
-	
+	//this specifies that one word is assigned another word.
 	public MarshmallowMonster(String name, int eyeCount, int armCount, double tentacleAmount, boolean hasBloop)
 	{
 		this.name = name;

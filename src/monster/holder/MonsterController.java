@@ -1,5 +1,5 @@
 package monster.holder;
-
+//we had to import stuff from our different classes to use themin this class
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
@@ -16,6 +16,18 @@ public class MonsterController
 
 	public void start()
 	{
+		boolean finished = true;
+		int count = 0;
+//		while(count < 100)
+//		{
+//			popup.displayText("I am so neat!" + count);
+//			count += 1;
+//		}
+		
+		for(int loop = 0; loop < 15; loop += 1)
+		{
+			popup.displayText("I am looping " + (loop + 1 ) + " times out of 15");
+		}
 		MarshmallowMonster sample = new MarshmallowMonster();
 		// System.out.println(sample);
 		popup.displayText(sample.toString());
@@ -41,17 +53,18 @@ public class MonsterController
 		popup.displayText(currentMonster.getName() + " wants to know what to eat next");
 		popup.displayText(currentMonster.getName() + " suggests arms, they have " + currentMonster.getArmCount());
 		popup.getResponse("How many do you want to eat?");
-		int specialAnswer;
+		int specialAnswer = 0;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 
 		if (isValidInteger(unconverted))
 		{
 			specialAnswer = Integer.parseInt(unconverted);
 		}
-
+		
 		Scanner myScanner = new Scanner(System.in);
-		int consumed = myScanner.nextInt();
-
+		int consumed = 0;
+		consumed = specialAnswer;
+		
 		if (consumed < 0)
 		{
 			// System.out.println("You cannot eat a negative amount silly human.");
@@ -67,7 +80,7 @@ public class MonsterController
 		{
 			// System.out.println("That is impossible - I only have " + currentMonster.getArmCount() + "
 			// arms!!!");
-			popup.displayText("That is impossie - I only have " + currentMonster.getArmCount() + " arms!!!");
+			popup.displayText("That is impossible - I only have " + currentMonster.getArmCount() + " arms!!!");
 		}
 		else
 		{
@@ -118,6 +131,7 @@ public class MonsterController
 			Integer.parseInt(sample);
 			valid = true;
 		}
+		//the catch stops the program from freaking out when something doesn't go right.
 		catch (NumberFormatException error)
 		{
 			popup.displayText("Only integer values are valid: " + sample + " is not");
@@ -125,4 +139,37 @@ public class MonsterController
 
 		return valid;
 	}
+	
+	private boolean isValidDouble(String sampleDouble)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Double.parseDouble(sampleDouble);
+			valid = true;	
+		}
+		catch (NumberFormatException error)
+		{
+			popup.displayText("only double values are valid: " + sampleDouble + " is not.");
+		}
+		return valid;
+	}
+	
+	private boolean isValidBoolean(String sampleBoolean)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Boolean.parseBoolean(sampleBoolean);
+			valid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			popup.displayText("only boolean values are valid: " + sampleBoolean + " is not.");
+		}
+		return valid;
+	}
+	
 }
