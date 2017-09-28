@@ -1,17 +1,21 @@
 package monster.holder;
-//we had to import stuff from our different classes to use themin this class
+//we had to import stuff from our different classes to use them in this class
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
+import java.util.List;
+import java.util.ArrayList;
 
 public class MonsterController
 {
 
 	private MonsterDisplay popup;
+	private List<MarshmallowMonster> monsterList;
 
 	public MonsterController()
 	{
 		popup = new MonsterDisplay();
+		monsterList = new ArrayList<MarshmallowMonster>();
 	}
 
 	public void start()
@@ -41,9 +45,23 @@ public class MonsterController
 		// System.out.println(realMonster);
 		popup.displayText(realMonster.toString());
 		interactWithTheMonster(realMonster);
+		
+		monsterList.add(realMonster);
+		monsterList.add(sample);
+		testList();
 
 	}
 
+	private void testList()
+	{
+		for(int index = 0; index < monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getName());
+			
+		}
+	}
+	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
 	{
 		// System.out.println(currentMonster.getName() + "wants to know what to eat next");
